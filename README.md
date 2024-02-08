@@ -24,10 +24,12 @@ Usage
 
 ### Apa
 
-Convert the given string to Apa case, following the APA Guidelines
+Convert the given string to Apa case, following the [APA Guidelines](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case)
 
 ```go
 import str_case "github.com/mohprilaksono/str-case"
 
-str_case.Apa("Thomas And Friends") //Thomas and Friends
+var value = str_case.Apa("Thomas And Friends") 
+
+//Thomas and Friends
 ```
