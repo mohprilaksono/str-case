@@ -24,7 +24,7 @@ Usage
 
 ### Apa
 
-Convert the given string to Title Case, following the [APA Guidelines](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case)
+Converts the given string to Title Case, following the [APA Guidelines](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case)
 
 ```go
 import str_case "github.com/mohprilaksono/str-case"

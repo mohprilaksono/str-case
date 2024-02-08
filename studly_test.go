@@ -10,10 +10,10 @@ import (
 func TestStrStudly(t *testing.T) {
 	assert := assert.New(t)
 
-	assert.Exactly("LaravelPHPFramework", str_case.Studly("laravel_p_h_p_framework"))
-	assert.Exactly("LaravelPhpFramework", str_case.Studly("laravel_php_framework"))
-	assert.Exactly("LaravelPhPFramework", str_case.Studly("laravel-phP-framework"))
-	assert.Exactly("LaravelPhpFramework", str_case.Studly("laravel  -_-  php   -_-   framework   "))
+	assert.Exactly("GoGINFramework", str_case.Studly("Go_g_i_n_framework"))
+	assert.Exactly("GoFiberFramework", str_case.Studly("Go_fiber_framework"))
+	assert.Exactly("GoEchOFramework", str_case.Studly("Go-echO-framework"))
+	assert.Exactly("GoFiberFramework", str_case.Studly("Go  -_-  fiber   -_-   framework   "))
 	assert.Exactly("FooBar", str_case.Studly("fooBar"))
 	assert.Exactly("FooBar", str_case.Studly("foo_bar"))
 	assert.Exactly("FooBar", str_case.Studly("foo_bar"))
