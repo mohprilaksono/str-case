@@ -6,7 +6,7 @@ a Go library for string case manipulation
 Install
 -------
 
-```go
+```bash
 go get -u github.com/mohprilaksono/str-case
 ```
 
