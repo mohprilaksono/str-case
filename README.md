@@ -99,3 +99,9 @@ var value = str_case.UcFirst("helloWorld")
 
 // HelloWorld
 ```
+Running Tests
+-------
+
+```bash
+go test -v
+```
