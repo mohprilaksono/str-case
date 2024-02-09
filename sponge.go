@@ -16,10 +16,14 @@ func Sponge(value string) string {
 	for s.Len() > 0 {
 		r, _, _ := s.ReadRune()
 
-		if rand.Float32() > 0.5 {
-			result.WriteRune(unicode.ToUpper(r))
+		if unicode.IsLetter(r) {
+			if rand.Float32() > 0.5 {
+				result.WriteRune(unicode.ToUpper(r))
+			} else {
+				result.WriteRune(unicode.ToLower(r))
+			}
 		} else {
-			result.WriteRune(unicode.ToLower(r))
+			result.WriteRune(r)
 		}
 	}
 
