@@ -5,14 +5,14 @@ import (
 	"unicode"
 )
 
-func Title(value string) string {
+func Macro(value string) string {
 	if strings.TrimSpace(value) == "" {
 		return value
 	}
-
-	s := strings.NewReader(value)
+	
+	s := strings.NewReader(strings.TrimSpace(value))
 	result := new(strings.Builder)
-	isNotLetter := false
+	isSpace := false
 	isFirstLetter := false
 	for s.Len() > 0 {
 		r, _, _ := s.ReadRune()
@@ -28,20 +28,31 @@ func Title(value string) string {
 			continue
 		}
 
-		if !unicode.IsLetter(r) {
-			result.WriteRune(r)
-			if !isNotLetter {
-				isNotLetter = true
+		if unicode.IsSpace(r) {
+			if !isSpace {
+				isSpace = true
 			}
 			continue
 		}
 
-		if isNotLetter {
+		if unicode.IsLetter(r) {
+			if isSpace {
+				isSpace = false
+				result.WriteRune('_')
+				result.WriteRune(unicode.ToUpper(r))
+				continue
+			}
+
+			if unicode.IsUpper(r) {
+				result.WriteRune('_')
+				result.WriteRune(r)
+				continue
+			}
+
 			result.WriteRune(unicode.ToUpper(r))
-			isNotLetter = false
 		} else {
-			result.WriteRune(unicode.ToLower(r))
-		}
+			result.WriteRune(r)
+		}		
 	}
 
 	return result.String()

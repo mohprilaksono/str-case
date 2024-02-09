@@ -79,7 +79,7 @@ var value = str_case.Snake("helloWorld")
 ```
 ### Sponge
 
-Converts the given string to sPoNGeCAse, is is usually used for creating a "Mocking SpongeBob" meme.
+Converts the given string to sPoNGeCAse, it is usually used for creating a "Mocking SpongeBob" meme.
 
 ```go
 import str_case "github.com/mohprilaksono/str-case"

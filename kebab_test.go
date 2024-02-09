@@ -20,4 +20,5 @@ func TestStrCaseKebab(t *testing.T) {
 	assert.Exactly("foo-bar", str_case.Kebab("foo-bar"))
 	assert.Exactly("foo--bar", str_case.Kebab("Foo-Bar"))
 	assert.Exactly("foo_-bar", str_case.Kebab("foo_Bar"))
+	assert.Exactly("the-kebab-case-converter-converts-text-to-kebab-case.", str_case.Kebab("The Kebab Case Converter converts text to Kebab Case."))
 }
