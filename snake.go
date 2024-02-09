@@ -29,7 +29,9 @@ func Snake(value string) string {
 		}
 
 		if unicode.IsSpace(r) {
-			isSpace = true
+			if !isSpace {
+				isSpace = true
+			}
 			continue
 		}
 

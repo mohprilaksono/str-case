@@ -99,6 +99,17 @@ var value = str_case.Studly("hello_world")
 
 // HelloWorld
 ```
+### Title
+
+Converts the given string to Title Case.
+
+```go
+import str_case "github.com/mohprilaksono/str-case"
+
+var value = str_case.Title("hello world") 
+
+// Hello World
+```
 ### UcFirst
 
 Converts the given string with the first-character uppercased.
@@ -110,8 +121,19 @@ var value = str_case.UcFirst("helloWorld")
 
 // HelloWorld
 ```
+Dependencies
+------------
+
+### Build dependencies
+
+* none
+
+### Test dependencies
+
+* `github.com/stretchr/testify`
+
 Running Tests
--------
+--------------
 
 ```bash
 go test -v

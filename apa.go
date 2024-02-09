@@ -4,9 +4,6 @@ import (
 	"bufio"
 	"slices"
 	"strings"
-
-	"golang.org/x/text/cases"
-	"golang.org/x/text/language"
 )
 
 func Apa(value string) string {
@@ -17,9 +14,7 @@ func Apa(value string) string {
 	minorWords := []string{"and", "as", "but", "if", "nor", "or", "so", "yet", "a", "an", "the", "at", "by", "for", "in", "of", "off", "on", "per", "to", "up", "via"}
 	endPunct := []rune{'.', '!', '?', ':', '-', ','}
 
-	c := cases.Title(language.English)
-	
-	scanner := bufio.NewScanner(strings.NewReader(c.String(value)))
+	scanner := bufio.NewScanner(strings.NewReader(Title(value)))
 	scanner.Split(bufio.ScanWords)
 	result := new(strings.Builder)
 	foundEndPunct := false

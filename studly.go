@@ -29,7 +29,9 @@ func Studly(value string) string {
 		}
 		
 		if unicode.IsSpace(r) || r == '_' || r == '-'{
-			isSpace = true
+			if !isSpace {
+				isSpace = true
+			}
 			continue
 		}
 
