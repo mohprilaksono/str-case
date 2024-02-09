@@ -10,33 +10,45 @@ func Kebab(value string) string {
 		return value
 	}
 	
-	values := strings.NewReader(LcFirst(strings.TrimSpace(value)))
+	s := strings.NewReader(strings.TrimSpace(value))
 	result := new(strings.Builder)
 	isSpace := false
-	for values.Len() > 0 {
-		v, _, _ := values.ReadRune()
+	isFirstLetter := false
+	for s.Len() > 0 {
+		r, _, _ := s.ReadRune()
 
-		if unicode.IsSpace(v) {
+		if !isFirstLetter {
+			if unicode.IsLetter(r) {
+				result.WriteRune(unicode.ToLower(r))
+				isFirstLetter = true
+			} else {
+				result.WriteRune(r)
+			}
+
+			continue
+		}
+
+		if unicode.IsSpace(r) {
 			isSpace = true
 			continue
 		}
 
-		if unicode.IsLetter(v) {
+		if unicode.IsLetter(r) {
 			if isSpace {
 				isSpace = false
 				result.WriteRune('-')
-				result.WriteRune(unicode.ToLower(v))
+				result.WriteRune(unicode.ToLower(r))
 				continue
 			}
 
-			if unicode.IsUpper(v) {
+			if unicode.IsUpper(r) {
 				result.WriteRune('-')
-				result.WriteRune(unicode.ToLower(v))
+				result.WriteRune(unicode.ToLower(r))
 				continue
 			}
 		}
 		
-		result.WriteRune(v)
+		result.WriteRune(r)
 	}
 
 	return result.String()

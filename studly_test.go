@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestStrStudly(t *testing.T) {
+func TestStrCaseStudly(t *testing.T) {
 	assert := assert.New(t)
 
 	assert.Exactly("GoGINFramework", str_case.Studly("Go_g_i_n_framework"))

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestStrCamel(t *testing.T) {
+func TestStrCaseCamel(t *testing.T) {
 	assert := assert.New(t)
 
 	assert.Exactly("goECHOFramework", str_case.Camel("Go_e_c_h_o_framework"))

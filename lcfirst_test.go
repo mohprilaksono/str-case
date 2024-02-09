@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestStrLcFirst(t *testing.T) {
+func TestStrCaseLcFirst(t *testing.T) {
 	assert := assert.New(t)
 	
 	assert.Exactly("go", str_case.LcFirst("Go"))

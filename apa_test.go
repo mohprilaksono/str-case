@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestStrApa(t *testing.T) {
+func TestStrCaseApa(t *testing.T) {
 	assert := assert.New(t)
 
 	assert.Exactly("Thomas and Friends", str_case.Apa("thomas and friends"))

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestStrSnake(t *testing.T) {
+func TestStrCaseSnake(t *testing.T) {
 	assert := assert.New(t)
 
 	assert.Exactly("go_e_c_h_o_framework", str_case.Snake("GoECHOFramework"))

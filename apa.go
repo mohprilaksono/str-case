@@ -18,10 +18,16 @@ func Apa(value string) string {
 	endPunct := []rune{'.', '!', '?', ':', '-', ','}
 
 	c := cases.Title(language.English)
+	
 	scanner := bufio.NewScanner(strings.NewReader(c.String(value)))
 	scanner.Split(bufio.ScanWords)
 	result := new(strings.Builder)
 	foundEndPunct := false
+	
+	if scanner.Scan() {
+		result.Write(scanner.Bytes())
+	}
+
 	for scanner.Scan() {
 		s := scanner.Text()
 		
@@ -50,5 +56,5 @@ func Apa(value string) string {
 		result.WriteString(s)
 	}
 
-	return UcFirst(result.String())
+	return result.String()
 }

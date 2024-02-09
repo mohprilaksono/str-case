@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestStrKebab(t *testing.T) {
+func TestStrCaseKebab(t *testing.T) {
 	assert := assert.New(t)
 
 	assert.Exactly("go-e-c-h-o-framework", str_case.Kebab("GoECHOFramework"))

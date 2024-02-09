@@ -7,7 +7,7 @@ Install
 -------
 
 ```bash
-go get -u github.com/mohprilaksono/str-case
+go get github.com/mohprilaksono/str-case
 ```
 
 Example

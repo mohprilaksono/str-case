@@ -10,20 +10,20 @@ func UcFirst(value string) string {
 		return value
 	}
 
-	val := strings.NewReader(value)
+	s := strings.NewReader(value)
 	result := new(strings.Builder)
-	for val.Len() > 0 {
-		s, _, _ := val.ReadRune()
+	for s.Len() > 0 {
+		r, _, _ := s.ReadRune()
 
-		if unicode.IsLetter(s) {
-			result.WriteRune(unicode.ToUpper(s))
+		if unicode.IsLetter(r) {
+			result.WriteRune(unicode.ToUpper(r))
 			break
 		}
 		
-		result.WriteRune(s)
+		result.WriteRune(r)
 	}
 
-	val.WriteTo(result)
+	s.WriteTo(result)
 
 	return result.String()
 }
