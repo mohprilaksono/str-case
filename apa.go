@@ -17,6 +17,7 @@ func Apa(value string) string {
 	scanner := bufio.NewScanner(strings.NewReader(Title(value)))
 	scanner.Split(bufio.ScanWords)
 	result := new(strings.Builder)
+	result.Grow(len(value))
 	foundEndPunct := false
 	
 	if scanner.Scan() {

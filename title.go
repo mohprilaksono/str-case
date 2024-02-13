@@ -12,6 +12,7 @@ func Title(value string) string {
 
 	s := strings.NewReader(value)
 	result := new(strings.Builder)
+	result.Grow(len(value))
 	isNotLetter := false
 	isFirstLetter := false
 	for s.Len() > 0 {

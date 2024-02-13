@@ -1,7 +1,7 @@
 str_case
 ==========
 
-a Go library for string case manipulation.
+a Go library for string case manipulation. it is always uses [Builder.Write](https://pkg.go.dev/strings#Builder) methods to efficiently build a string and minimizes memory copying. 
 
 Install
 -------
@@ -17,6 +17,7 @@ Example
 import str_case "github.com/mohprilaksono/str-case"
 
 str_case.Apa("Thomas And Friends") //Thomas and Friends
+str_case.Sponge("HTML is not a programming language") // hTmL Is nOt A ProGraMmINg LanGuAgE
 ```
 
 Usage
@@ -134,7 +135,7 @@ var value = str_case.Studly("hello_world")
 ```
 ### Swap
 
-Swap the case value of the given string.
+Swap the case of the given string.
 
 ```go
 import str_case "github.com/mohprilaksono/str-case"

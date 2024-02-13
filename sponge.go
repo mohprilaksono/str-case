@@ -13,6 +13,7 @@ func Sponge(value string) string {
 
 	s := strings.NewReader(strings.TrimSpace(value))
 	result := new(strings.Builder)
+	result.Grow(len(value))
 	for s.Len() > 0 {
 		r, _, _ := s.ReadRune()
 
